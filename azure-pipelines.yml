@@ -24,7 +24,7 @@ steps:
     command: 'publish'
 #    publishWebProjects: false
     projects: 'src/DemoBlazorApp/DemoBlazorApp.csproj'
-    outputDir: '$(Build.ArtifactStagingDirectory)/DemoBlazorApp'
+#    outputDir: '$(Build.ArtifactStagingDirectory)/DemoBlazorApp'
     arguments: '--configuration Release'
 
 # - script: dotnet cake --target=Publish --Configuration=Release
@@ -33,4 +33,4 @@ steps:
 - task: PublishBuildArtifacts@1
   inputs:
     ArtifactName: 'DemoBlazorApp'
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)/DemoBlazorApp'
+    PathtoPublish: 'src/DemoBlazorApp/bin/Release/net6.0/publish/'
