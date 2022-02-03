@@ -29,8 +29,8 @@ Task("Publish")
   .Does(() => 
   {
         Information("Publishing Project");
-        DotNetBuild("src/DemoBlazorApp/DemoBlazorApp.csproj", 
-            new DotNetBuildSettings()
+        DotNetPublish("src/DemoBlazorApp/DemoBlazorApp.csproj", 
+            new DotNetPublishSettings()
             {
                 Configuration = buildConfiguration
             });

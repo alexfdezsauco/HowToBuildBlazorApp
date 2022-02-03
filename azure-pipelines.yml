@@ -25,4 +25,4 @@ steps:
 - task: PublishBuildArtifacts@1
   inputs:
     ArtifactName: 'DemoBlazorApp'
-    PathtoPublish: 'src/DemoBlazorApp/bin/Release/net6.0/wwwroot'
+    PathtoPublish: 'src/DemoBlazorApp/bin/Release/net6.0/publish/'
