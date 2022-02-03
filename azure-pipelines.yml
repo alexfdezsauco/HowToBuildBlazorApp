@@ -18,7 +18,13 @@ steps:
 
 - script: dotnet tool restore
   displayName: 'Restore Tools'
-  
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    projects: 'src/DemoBlazorApp/DemoBlazorApp.csproj'
+    arguments: '--configuration Release'
+    
 - task: DotNetCoreCLI@2
   inputs:
     command: 'publish'
