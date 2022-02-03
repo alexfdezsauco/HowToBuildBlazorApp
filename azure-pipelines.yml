@@ -25,19 +25,20 @@ steps:
     command: 'publish'
     # publishWebProjects: false
     projects: 'src/DemoBlazorApp/DemoBlazorApp.csproj'
-    arguments: '--configuration Release --output output/DemoBlazorApp'
+    arguments: '--configuration Release --output $(Build.ArtifactStagingDirectory)/DemoBlazorApp'
     buildProperties: 
 
 - task: Bash@3
+  displayName: List DemoBlazorApp Artifact
   inputs:
     targetType: 'inline'
     script: |
       # Write your commands here
       
-      ls output/DemoBlazorApp
+      ls $(Build.ArtifactStagingDirectory)/DemoBlazorApp
 
 - task: PublishBuildArtifacts@1
   displayName: Publish Artifacts
   inputs:
     ArtifactName: 'DemoBlazorApp'
-    PathtoPublish: 'output/DemoBlazorApp/'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/DemoBlazorApp/'
