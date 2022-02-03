@@ -23,7 +23,7 @@ steps:
   inputs:
     command: 'publish'
     publishWebProjects: false
-    projects: 'src/DemoBlazorApp/bin/Release/net6.0/publish/'
+    projects: 'src/DemoBlazorApp/DemoBlazorApp.csproj'
     arguments: '--configuration $(BuildConfiguration)'
 
 # - script: dotnet cake --target=Publish --Configuration=Release
