@@ -19,16 +19,16 @@ steps:
 - script: dotnet tool restore
   displayName: 'Restore Tools'
     
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'publish'
+# - task: DotNetCoreCLI@2
+#  inputs:
+#    command: 'publish'
 #    publishWebProjects: false
-    projects: 'src/DemoBlazorApp/DemoBlazorApp.csproj'
+#    projects: 'src/DemoBlazorApp/DemoBlazorApp.csproj'
 #    outputDir: '$(Build.ArtifactStagingDirectory)/DemoBlazorApp'
-    arguments: '--configuration Release'
+#    arguments: '--configuration Release'
 
-# - script: dotnet cake --target=Publish --Configuration=Release
-#  displayName: 'Publish'
+- script: dotnet cake --target=Publish --Configuration=Release
+  displayName: 'Publish'
 
 - task: PublishBuildArtifacts@1
   inputs:
