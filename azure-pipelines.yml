@@ -18,9 +18,16 @@ steps:
 
 - script: dotnet tool restore
   displayName: 'Restore Tools'
+  
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'publish'
+    publishWebProjects: false
+    projects: 'src/DemoBlazorApp/bin/Release/net6.0/publish/'
+    arguments: '--configuration $(BuildConfiguration)'
 
-- script: dotnet cake --target=Publish --Configuration=Release
-  displayName: 'Publish'
+# - script: dotnet cake --target=Publish --Configuration=Release
+#  displayName: 'Publish'
 
 - task: PublishBuildArtifacts@1
   inputs:
